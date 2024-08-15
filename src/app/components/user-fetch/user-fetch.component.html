@@ -1,0 +1,42 @@
+<div style="text-align: center; margin-top: 20px;">
+    <h1>Jpa And Reactive</h1> 
+    <div style="margin-bottom: 20px;" id="navbar">
+      <button (click)="fetchJpaUsers()">JPA Table</button>
+      <button (click)="fetchReactiveUsers()">Reactive Table</button>
+    </div> 
+    <div *ngIf="jpaUsers.length > 0">
+      <table border="1" style="margin: 0 auto;">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of jpaUsers">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngIf="reactiveUsers.length > 0">
+      <table border="1" style="margin: 0 auto;">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of reactiveUsers">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngIf="jpaUsers.length === 0 && reactiveUsers.length === 0">
+    </div>
+  </div>
+  
